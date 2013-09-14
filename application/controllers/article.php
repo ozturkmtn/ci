@@ -3,15 +3,16 @@ class article extends CI_Controller
 {
     function __construct() {
         parent::__construct();
-        //$this->load->library('session');        
-    }
-    function index()
-    {
+        //$this->load->library('session');     
         $online = $this->session->userdata('adminonline');
         if($online != 1)
         {
             redirect(site_url().'/admin');
         }
+    }
+    function index()
+    {
+        
         
         $this->load->model('article_model');
         $data['list_array'] = $this->article_model->list_article();
