@@ -29,39 +29,4 @@
         </div>
     </body>
 </html>
-<?php
 
-class foo
-{
-    public static $mystatic = 'foo';
-    
-    function staticValue()
-    {
-        return self::$mystatic;
-    }
-}
-
-class bar extends foo
-{
-    public function fooStatic()
-    {
-        return parent::$mystatic;
-    }
-}
-
-print foo::$mystatic;
-
-$foo = new foo();
-print $foo->staticValue();
-print $foo->myStatic;
-
-print $foo::$mystatic;
-$classname = 'foo';
-print $classname::myStatic;
-
-print bar::$mystatic;
-$bar = new bar();
-print $bar->fooStatic();
-
-    
-    ?>
